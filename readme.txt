@@ -17,6 +17,7 @@ WP e-Commerce extension that allows you to add simple "product options" to produ
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Create your product options under the "Products" menu
 4. Assign product options to your products
+5. If you're running on WP e-Commerce 3.8.6 or below, make the required changes to your theme file - see here for details: http://getshopped.org/forums/topic/simple-product-options/#post-221481
 
 == Frequently Asked Questions ==
 
