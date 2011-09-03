@@ -4,7 +4,7 @@ Plugin Name: WP e-Commerce Simple Product Options
 Plugin URI: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&utm_medium=www&utm_campaign=wpec-simple-product-options
 Description: WP e-Commerce extension that allows you to add simple "product options" to products without having to create or manage variations
 Author: Lee Willis
-Version: 0.1
+Version: 0.2
 Author URI: http://www.leewillis.co.uk/
 License: GPLv3
 */
