@@ -57,6 +57,9 @@ class wpec_simple_product_options_frontend {
 		
 		$options = wp_get_object_terms ( $product_id, 'wpec_product_option', array ( 'orderby' => 'parent', 'order' => 'asc' ) );
 		
+		if ( ! count ( $options ) )
+			return;
+
 		// Re-arrange to an array structure suitable for output
 		foreach ($options as $option) {
 
@@ -84,6 +87,9 @@ class wpec_simple_product_options_frontend {
 			}
 
 		}
+
+		if ( ! isset ( $output_array) || ! count ( $output_array ) )
+			return;
 
 		foreach ( $output_array as $option_set ) {
 
