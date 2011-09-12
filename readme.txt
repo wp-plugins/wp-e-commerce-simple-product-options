@@ -36,6 +36,9 @@ Product options are shown against the sale under Store Sales in your WordPress D
 
 == Changelog ==
 
+= 0.3 =
+Avoid PHP warnings on products with no options
+
 = 0.2 =
 Compatability with official hooks added in next WP e-Commerce release
 
