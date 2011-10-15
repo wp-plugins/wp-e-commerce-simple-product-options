@@ -12,7 +12,24 @@ class wpec_simple_product_options_frontend {
 		add_action ( 'wpsc_product_form_fields', array ( &$this, 'display_product_options' ) );
 		// Actual hook added to WPEC
 		add_action ( 'wpsc_product_form_fields_begin', array ( &$this, 'display_product_options' ) );
+
 		add_filter ( 'wpsc_add_to_cart_product_id', array ( &$this, 'parse_product_options' ) );
+
+		// Show the personlisation information during checkout
+		add_action ( 'wpsc_after_checkout_cart_item_name', array ( &$this, 'checkout_personalisation_information' ) );
+
+	}
+
+
+
+	public function checkout_personalisation_information() {
+
+		global $wpsc_cart; ?>
+		<br/>
+		<span class="wpec_product_option_checkout_text">
+		<?php esc_html_e ( $wpsc_cart->cart_item->custom_message ); ?>
+		</span>
+		<?php
 
 	}
 

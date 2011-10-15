@@ -122,7 +122,7 @@ class wpec_simple_product_options_admin {
 
 	    }
 
-		?> <ul id="<?php echo $taxonomy; ?>checklist" class="list:<?php echo $taxonomy?> categorychecklist form-no-clear"> <?php
+		?> <ul id="wpec_product_optionchecklist" class="list:wpec_product_option categorychecklist form-no-clear"> <?php
 		wp_terms_checklist ( $post->ID, array (
 		                                       'taxonomy' => 'wpec_product_option',
 											   'selected_cats' => $product_terms,
