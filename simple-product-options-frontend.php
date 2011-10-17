@@ -17,16 +17,30 @@ class wpec_simple_product_options_frontend {
 
 		// Show the personlisation information during checkout
 		add_action ( 'wpsc_after_checkout_cart_item_name', array ( &$this, 'checkout_personalisation_information' ) );
+		add_action ( 'wpsc_after_cart_widget_item_name', array ( &$this, 'cart_widget_personalisation_information' ) );
 
 	}
 
 
 
 	public function checkout_personalisation_information() {
+		$this->show_personalisation_information ( 'checkout' );
+	}
+
+
+
+	public function cart_widget_personalisation_information() {
+		$this->show_personalisation_information ( 'cart_widget' );
+	}
+
+
+
+
+	public function show_personalisation_information($context) {
 
 		global $wpsc_cart; ?>
 		<br/>
-		<span class="wpec_product_option_checkout_text">
+		<span class="wpec_product_option_<?php esc_attr_e ( $context ); ?>_text">
 		<?php esc_html_e ( $wpsc_cart->cart_item->custom_message ); ?>
 		</span>
 		<?php

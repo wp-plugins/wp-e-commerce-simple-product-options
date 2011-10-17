@@ -76,10 +76,13 @@ class wpec_simple_product_options_admin {
 
 		// Remove standard WP meta box for the taxonomy, and add our own
 		remove_meta_box ( 'wpec_product_optiondiv', 'wpsc-product', 'side' ) ;
-		add_meta_box ( 'wpec-spo-product-options', __('Product Options', 'wpec_spo'), array(&$this, 'meta_box'), 'wpsc-product', 'advanced', 'high' ) ;
-		add_filter ( 'taxonomy_dropdown_args', array ( &$this, 'limit_taxonomy_parent_choices' ), 10, 2 );
-		add_action ( 'wpec_product_option_pre_add_form', array ( &$this, 'show_taxonomy_hierarchy_warning' ) );
-		wp_enqueue_script( 'simple-product-options', plugin_dir_url( __FILE__ ).'js/simple-product-options.js', array());
+
+		if ( get_terms ( 'wpec_product_option', array ( 'fields' => 'count' ) ) ) {
+			add_meta_box ( 'wpec-spo-product-options', __('Product Options', 'wpec_spo'), array(&$this, 'meta_box'), 'wpsc-product', 'advanced', 'high' ) ;
+			add_filter ( 'taxonomy_dropdown_args', array ( &$this, 'limit_taxonomy_parent_choices' ), 10, 2 );
+			add_action ( 'wpec_product_option_pre_add_form', array ( &$this, 'show_taxonomy_hierarchy_warning' ) );
+			wp_enqueue_script( 'simple-product-options', plugin_dir_url( __FILE__ ).'js/simple-product-options.js', array());
+		}
 
 	}
 
