@@ -58,7 +58,7 @@ class wpec_simple_product_options_frontend {
 
 			// Construct the options into a string
 			$cnt = 0;
-			$custom_text = '';
+			$custom_text = apply_filters ( 'wpec_spo_before_options', '' );
 
 			foreach ( $_POST['wpec-product-option'] as $parent_term => $term ) {
 
@@ -66,12 +66,13 @@ class wpec_simple_product_options_frontend {
 				$child = get_term_by ( 'id', $term, 'wpec_product_option' );
 
 				if ( $cnt )
-					$custom_text .= '; ';
+					$custom_text .= apply_filters ( 'wpec_spo_between_options', '; ' );
 
 				$custom_text .= $parent->name . ': ' . $child->name;
 
 				$cnt++;
 			}
+			$custom_text .= apply_filters ( 'wpec_spo_after_options', '' );
 
 			$_POST['custom_text'] = $custom_text;
 

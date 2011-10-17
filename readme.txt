@@ -4,7 +4,7 @@ Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&
 Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
 Tested up to: 3.2
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3
 
 == Description ==
@@ -38,6 +38,9 @@ Product options are shown against the sale under Store Sales in your WordPress D
 4. Product Option choices recorded against a sale
 
 == Changelog ==
+
+= 1.1 = 
+Add some filters to allow layout customisation
 
 = 1.0 =
 Minor tweaks. Also hook into proposed checkout / cart hooks for future WP e-Commerce version to display choices during checkout
