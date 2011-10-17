@@ -4,7 +4,7 @@ Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&
 Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
 Tested up to: 3.2
-Stable tag: 0.3
+Stable tag: 1.0
 License: GPLv3
 
 == Description ==
@@ -21,6 +21,9 @@ WP e-Commerce extension that allows you to add simple "product options" to produ
 
 == Frequently Asked Questions ==
 
+= The options chosen are supposed to be displayed during checkout - where are they? =
+The current stable release of WP e-Commerce doesn't have the hooks to allow external plugins to display info like this during checkout. They're coming in a future version - watch this space
+
 = Can I change the price charged according to the option chosen? =
 No, if you want the product options to affect stock, or pricing then you should use WP e-Commerce's built in "Variations" functionality
 
@@ -35,6 +38,9 @@ Product options are shown against the sale under Store Sales in your WordPress D
 4. Product Option choices recorded against a sale
 
 == Changelog ==
+
+= 1.0 =
+Minor tweaks. Also hook into proposed checkout / cart hooks for future WP e-Commerce version to display choices during checkout
 
 = 0.3 =
 Avoid PHP warnings on products with no options
