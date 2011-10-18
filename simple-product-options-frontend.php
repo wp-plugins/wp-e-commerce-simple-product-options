@@ -38,12 +38,24 @@ class wpec_simple_product_options_frontend {
 
 	public function show_personalisation_information($context) {
 
-		global $wpsc_cart; ?>
-		<br/>
-		<span class="wpec_product_option_<?php esc_attr_e ( $context ); ?>_text">
-		<?php esc_html_e ( $wpsc_cart->cart_item->custom_message ); ?>
-		</span>
-		<?php
+		global $wpsc_cart; 
+
+		// Seperate out the options into individual items
+		$options = explode ( apply_filters ( 'wpec_spo_between_options_db', '; ' ), $wpsc_cart->cart_item->custom_message );
+
+		echo apply_filters ( 'wpec_spo_before_options', '<br/><span class="wpec_product_option_'.esc_attr ( $context ).'_text">', $context );
+
+		$cnt = 0 ;
+		foreach ( $options as $option ) {
+
+			if ( $cnt )
+				echo apply_filters ( 'wpec_spo_between_options', '; ', $context );
+
+			esc_html_e ( $option );
+			$cnt++;
+		}
+
+		echo apply_filters ( 'wpec_spo_after_options', '</span>', $context );
 
 	}
 
@@ -58,21 +70,25 @@ class wpec_simple_product_options_frontend {
 
 			// Construct the options into a string
 			$cnt = 0;
-			$custom_text = apply_filters ( 'wpec_spo_before_options', '' );
+			$custom_text = '';
 
 			foreach ( $_POST['wpec-product-option'] as $parent_term => $term ) {
 
 				$parent = get_term_by ( 'id', $parent_term, 'wpec_product_option' );
 				$child = get_term_by ( 'id', $term, 'wpec_product_option' );
 
+				/* Filter wpec_spo_between_options_db allows you to change the separator used between options when
+				 * storing the data in the database. DO NOT use this to change how the information is displayed in 
+				 * the cart or during checkout. Only use this if your options, or values contain the default
+				 * separator ";"
+				 */
 				if ( $cnt )
-					$custom_text .= apply_filters ( 'wpec_spo_between_options', '; ' );
+					$custom_text .= apply_filters ( 'wpec_spo_between_options_db', '; ' );
 
 				$custom_text .= $parent->name . ': ' . $child->name;
 
 				$cnt++;
 			}
-			$custom_text .= apply_filters ( 'wpec_spo_after_options', '' );
 
 			$_POST['custom_text'] = $custom_text;
 
