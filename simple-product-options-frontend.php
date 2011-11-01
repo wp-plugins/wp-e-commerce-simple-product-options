@@ -70,7 +70,7 @@ class wpec_simple_product_options_frontend {
 
 			// Construct the options into a string
 			$cnt = 0;
-			$custom_text = '';
+			$custom_text = isset ( $_POST['custom_text'] ) ? $_POST['custom_text']."\n" : '';
 
 			foreach ( $_POST['wpec-product-option'] as $parent_term => $term ) {
 
