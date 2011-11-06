@@ -51,7 +51,7 @@ class wpec_simple_product_options_frontend {
 			if ( $cnt )
 				echo apply_filters ( 'wpec_spo_between_options', '; ', $context );
 
-			esc_html_e ( $option );
+			echo nl2br ( esc_html ( $option ) );
 			$cnt++;
 		}
 
