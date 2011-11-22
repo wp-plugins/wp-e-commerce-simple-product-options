@@ -4,7 +4,7 @@ Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&
 Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
 Tested up to: 3.2
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv3
 
 == Description ==
@@ -38,6 +38,9 @@ Product options are shown against the sale under Store Sales in your WordPress D
 4. Product Option choices recorded against a sale
 
 == Changelog ==
+
+= 1.4 =
+Minor tweaks.
 
 = 1.3 =
 Work alongside personalisable products
