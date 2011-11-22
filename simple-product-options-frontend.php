@@ -49,7 +49,7 @@ class wpec_simple_product_options_frontend {
 		foreach ( $options as $option ) {
 
 			if ( $cnt )
-				echo apply_filters ( 'wpec_spo_between_options', '; ', $context );
+				echo nl2br ( esc_html ( apply_filters ( 'wpec_spo_between_options', '; ', $context ) ) );
 
 			echo nl2br ( esc_html ( $option ) );
 			$cnt++;
