@@ -5,7 +5,6 @@ Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
 Tested up to: 3.2
 Stable tag: 1.4
-License: GPLv3
 
 == Description ==
 
