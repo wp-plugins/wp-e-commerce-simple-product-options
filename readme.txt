@@ -4,7 +4,7 @@ Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&
 Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
 Tested up to: 3.2
-Stable tag: 1.4
+Stable tag: 1.5
 
 == Description ==
 
@@ -29,6 +29,9 @@ No, if you want the product options to affect stock, or pricing then you should 
 = Where can I see which product options have been chosen = 
 Product options are shown against the sale under Store Sales in your WordPress Dashboard menu
 
+= Can I order the options as they're shown to the customer? =
+Yes, install a taxonomy ordering plugin - I recommend http://wordpress.org/extend/plugins/taxonomy-terms-order/ Once you've set an order in the admin area, that will be honoured on the front end.
+
 == Screenshots ==
 
 1. Product Options Menu
@@ -37,6 +40,10 @@ Product options are shown against the sale under Store Sales in your WordPress D
 4. Product Option choices recorded against a sale
 
 == Changelog ==
+
+= 1.5 =
+Allow options to be ordered using taxonomy ordering plugins such as http://wordpress.org/extend/plugins/taxonomy-terms-order/
+Development kindly sponsored by Adam at Bauserman Group.
 
 = 1.4 =
 Minor tweaks.

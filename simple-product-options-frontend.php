@@ -99,13 +99,28 @@ class wpec_simple_product_options_frontend {
 
 
 
+	function sort_product_options( $a, $b ) {
+
+		if ( $a->term_order == $b->term_order)
+			return 0;
+
+		if ( $a->term_order > $b->term_order)
+			return 1;
+
+		return -1;
+
+	}
+
+
+
 	function display_product_options() {
 
 		// Retrieve the product options for this product
 		$product_id = wpsc_the_product_id();
 		
 		$options = wp_get_object_terms ( $product_id, 'wpec_product_option', array ( 'orderby' => 'parent', 'order' => 'asc' ) );
-		
+        $options = apply_filters ( 'wpec_spo_product_options', $options, $product_id );
+
 		if ( ! count ( $options ) )
 			return;
 
@@ -134,15 +149,20 @@ class wpec_simple_product_options_frontend {
 				                                          'options' => Array ( $option )
 														  );
 			}
-
+		
 		}
 
 		if ( ! isset ( $output_array) || ! count ( $output_array ) )
 			return;
 
+		$output_array = apply_filters ( 'wpec_spo_product_options_output_array', $output_array, $product_id);
+		
 		foreach ( $output_array as $option_set ) {
 
 			if ( ! empty ( $option_set['options'] ) ) {
+
+				// Sort by term order
+				usort ( $option_set['options'], array ( &$this, 'sort_product_options' ) );
 
 				$option_set_info = &$option_set['option_set_info'];
 
