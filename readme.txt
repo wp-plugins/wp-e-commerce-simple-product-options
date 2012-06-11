@@ -4,7 +4,7 @@ Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&
 Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
 Tested up to: 3.2
-Stable tag: 1.5
+Stable tag: 1.6
 
 == Description ==
 
@@ -40,6 +40,9 @@ Yes, install a taxonomy ordering plugin - I recommend http://wordpress.org/exten
 4. Product Option choices recorded against a sale
 
 == Changelog ==
+
+= 1.6 =
+Allow option sets to be ordered
 
 = 1.5 =
 Allow options to be ordered using taxonomy ordering plugins such as http://wordpress.org/extend/plugins/taxonomy-terms-order/

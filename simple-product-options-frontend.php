@@ -99,6 +99,20 @@ class wpec_simple_product_options_frontend {
 
 
 
+	function sort_product_option_sets ( $a, $b ) {
+
+		if ( $a['option_set_info']->term_order == $b['option_set_info']->term_order)
+			return 0;
+
+		if ( $a['option_set_info']->term_order > $b['option_set_info']->term_order)
+			return 1;
+
+		return -1;
+
+	}
+
+
+
 	function sort_product_options( $a, $b ) {
 
 		if ( $a->term_order == $b->term_order)
@@ -155,8 +169,10 @@ class wpec_simple_product_options_frontend {
 		if ( ! isset ( $output_array) || ! count ( $output_array ) )
 			return;
 
+		usort ( $output_array, array ( &$this, 'sort_product_option_sets' ) );
+
 		$output_array = apply_filters ( 'wpec_spo_product_options_output_array', $output_array, $product_id);
-		
+
 		foreach ( $output_array as $option_set ) {
 
 			if ( ! empty ( $option_set['options'] ) ) {
