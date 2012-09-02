@@ -3,12 +3,12 @@ Contributors: leewillis77
 Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&utm_medium=www&utm_campaign=wpec-simple-product-options
 Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
-Tested up to: 3.2
+Tested up to: 3.4.1
 Stable tag: 1.6
 
 == Description ==
 
-WP e-Commerce extension that allows you to add simple "product options" to products without having to create or manage variations. 
+WP e-Commerce extension that allows you to add simple "product options" to products without having to create or manage variations.
 
 == Installation ==
 
@@ -26,7 +26,7 @@ The current stable release of WP e-Commerce doesn't have the hooks to allow exte
 = Can I change the price charged according to the option chosen? =
 No, if you want the product options to affect stock, or pricing then you should use WP e-Commerce's built in "Variations" functionality
 
-= Where can I see which product options have been chosen = 
+= Where can I see which product options have been chosen =
 Product options are shown against the sale under Store Sales in your WordPress Dashboard menu
 
 = Can I order the options as they're shown to the customer? =
@@ -54,10 +54,10 @@ Minor tweaks.
 = 1.3 =
 Work alongside personalisable products
 
-= 1.2 = 
+= 1.2 =
 Added more flexible filters
 
-= 1.1 = 
+= 1.1 =
 Add some filters to allow layout customisation
 
 = 1.0 =
