@@ -10,10 +10,8 @@ License: GPLv3
 */
 
 if ( ! is_admin() ) {
-	require_once ( 'simple-product-options-frontend.php' );
+    require_once ( 'simple-product-options-frontend.php' );
 } else {
-	require_once ( 'simple-product-options-admin.php' );
+    require_once ( 'simple-product-options-admin.php' );
 }
 require_once ( 'simple-product-options-common.php' );
-
-?>
