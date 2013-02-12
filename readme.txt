@@ -38,7 +38,7 @@ Yes, install a taxonomy ordering plugin - I recommend http://wordpress.org/exten
 2. Product Options Setup
 3. Adding Product Options to a Product
 4. Product Option choices recorded against a sale
-5. Product options on the frontend
+5. Product Options on the frontend
 
 == Changelog ==
 
