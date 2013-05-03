@@ -125,7 +125,7 @@ class wpec_simple_product_options_admin {
 
         }
 
-        ?> <ul id="wpec_product_optionchecklist" class="list:wpec_product_option categorychecklist form-no-clear"> <?php
+        ?> <ul id="wpec_product_optionchecklist" class="list:wpec_product_option categorychecklist form-no-clear"><input type='hidden' name='tax_input[wpec_product_option][]' value='0' /><?php
         wp_terms_checklist ( $post->ID, array (
                                                'taxonomy' => 'wpec_product_option',
                                                'selected_cats' => $product_terms,
