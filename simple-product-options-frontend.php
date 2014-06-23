@@ -15,7 +15,7 @@ class wpec_simple_product_options_frontend {
 
         add_filter ( 'wpsc_add_to_cart_product_id', array ( &$this, 'parse_product_options' ) );
 
-        // Show the personlisation information during checkout
+        // Show the personalisation information during checkout
         add_action ( 'wpsc_after_checkout_cart_item_name', array ( &$this, 'checkout_personalisation_information' ) );
         add_action ( 'wpsc_after_cart_widget_item_name', array ( &$this, 'cart_widget_personalisation_information' ) );
 
@@ -38,7 +38,7 @@ class wpec_simple_product_options_frontend {
 
     public function show_personalisation_information($context) {
 
-        global $wpsc_cart; 
+        global $wpsc_cart;
 
         // Seperate out the options into individual items
         $options = explode ( apply_filters ( 'wpec_spo_between_options_db', '; ' ), $wpsc_cart->cart_item->custom_message );
@@ -78,7 +78,7 @@ class wpec_simple_product_options_frontend {
                 $child = get_term_by ( 'id', $term, 'wpec_product_option' );
 
                 /* Filter wpec_spo_between_options_db allows you to change the separator used between options when
-                 * storing the data in the database. DO NOT use this to change how the information is displayed in 
+                 * storing the data in the database. DO NOT use this to change how the information is displayed in
                  * the cart or during checkout. Only use this if your options, or values contain the default
                  * separator ";"
                  */
@@ -137,7 +137,7 @@ class wpec_simple_product_options_frontend {
 
         // Retrieve the product options for this product
         $product_id = wpsc_the_product_id();
-        
+
         $options = wp_get_object_terms ( $product_id, 'wpec_product_option', array ( 'orderby' => 'parent', 'order' => 'asc' ) );
         $options = apply_filters ( 'wpec_spo_product_options', $options, $product_id );
 
@@ -154,7 +154,7 @@ class wpec_simple_product_options_frontend {
             if ( isset ( $output_array[$option->parent] ) ) {
 
                 // Already have the parent info - just add the child
-                $output_array[$option->parent]['options'][] = $option; 
+                $output_array[$option->parent]['options'][] = $option;
 
             } else {
 
@@ -169,7 +169,7 @@ class wpec_simple_product_options_frontend {
                                                           'options' => Array ( $option )
                                                           );
             }
-        
+
         }
 
         if ( ! isset ( $output_array) || ! count ( $output_array ) )
