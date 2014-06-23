@@ -16,9 +16,14 @@ WP e-Commerce extension that allows you to add simple "product options" to produ
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Create your product options under the "Products" menu
 4. Assign product options to your products
-5. The WP e-Commerce stable release doesn't yet contain the hooks you need. You'll need to make the required changes to your theme file - see here for details: http://getshopped.org/forums/topic/simple-product-options/#post-221481
+
 
 == Frequently Asked Questions ==
+
+= The options aren't displayed on the product page =
+It's likely that your theme doesn't include the hooks you need. You'll need to ensure that your theme contains the standard WP e-Commerce hook
+"wpsc_product_form_fields_begin". You can see the official WP e-Commerce version here, in wpsc-single_product.php here: (https://github.com/wp-e-commerce/WP-e-Commerce/blob/3.8.14/wpsc-theme/wpsc-single_product.php#L77)[https://github.com/wp-e-commerce/WP-e-Commerce/blob/3.8.14/wpsc-theme/wpsc-single_product.php#L77]
+
 
 = The options chosen are supposed to be displayed during checkout - where are they? =
 The current stable release of WP e-Commerce doesn't have the hooks to allow external plugins to display info like this during checkout. They're coming in a future version - watch this space
