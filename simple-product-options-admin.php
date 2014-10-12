@@ -10,15 +10,15 @@ class wpec_simple_product_options_walker extends Walker {
 
     // Don't need to output anything - if this was a nest list it would be a <ul>
     // It's here purely to override the default output with nothing.
-    function start_lvl( &$output, $depth, $args ) {
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
     }
 
     // Same as above for the closing tag.
-    function end_lvl( &$output, $depth, $args ) {
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
     }
 
     // Start variation set or variation
-    function start_el( &$output, $category, $depth, $args ) {
+    function start_el( &$output, $category, $depth = 0, $args = array(), $current_object_id = 0 ) {
 
         // Only show product option sets, and their immediate children:
         if ( $depth > 1 )
@@ -50,7 +50,7 @@ class wpec_simple_product_options_walker extends Walker {
     }
 
     // End variation set or variation
-    function end_el( &$output, $category, $depth, $args ) {
+    function end_el( &$output, $category, $depth = 0, $args = array() ) {
 
         if ( $depth > 1 )
             return;
