@@ -19,6 +19,14 @@ class wpec_simple_product_options_frontend {
         add_action ( 'wpsc_after_checkout_cart_item_name', array ( &$this, 'checkout_personalisation_information' ) );
         add_action ( 'wpsc_after_cart_widget_item_name', array ( &$this, 'cart_widget_personalisation_information' ) );
 
+        add_action( 'init', array( $this, 'init' ) );
+    }
+
+
+    public function init() {
+    	global $wpec_show_personalisation;
+    	remove_action( 'wpsc_after_checkout_cart_item_name', array( $wpec_show_personalisation, 'checkout_personalisation_information' ) );
+    	remove_action( 'wpsc_after_cart_widget_item_name', array( $wpec_show_personalisation, 'cart_widget_personalisation_information' ) );
     }
 
 
