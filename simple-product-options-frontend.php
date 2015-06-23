@@ -73,8 +73,10 @@ class wpec_simple_product_options_frontend {
 
         if ( isset ( $_POST['wpec-product-option'] ) && count ( $_POST['wpec-product-option'] ) ) {
 
-            // Flag the product as personalisable
+            // Flag the product as personalisable.
+            // Put it into POST for WPEC pre-4.0, REQUEST for post-4.0
             $_POST['is_customisable'] = 'true';
+            $_REQUEST['is_customisable'] = 'true';
 
             // Construct the options into a string
             $cnt = 0;
@@ -98,7 +100,9 @@ class wpec_simple_product_options_frontend {
                 $cnt++;
             }
 
-            $_POST['custom_text'] = $custom_text;
+			// Put it into POST for WPEC pre-4.0, REQUEST for post-4.0
+			$_POST['custom_text']    = $custom_text;
+			$_REQUEST['custom_text'] = $custom_text;
 
         }
 
