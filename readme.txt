@@ -3,8 +3,8 @@ Contributors: leewillis77
 Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&utm_medium=www&utm_campaign=wpec-simple-product-options
 Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
-Tested up to: 3.5.1
-Stable tag: 1.9
+Tested up to: 4.2
+Stable tag: 2.0
 
 == Description ==
 
@@ -46,6 +46,9 @@ Yes, install a taxonomy ordering plugin - I recommend http://wordpress.org/exten
 5. Product options on the frontend
 
 == Changelog ==
+
+= 2.0 =
+Compotibility with forthcoming WP e-Commerce 4.0
 
 = 1.8 =
 Support for WP e-Commerce 3.8.11
