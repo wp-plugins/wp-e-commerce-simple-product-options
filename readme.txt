@@ -3,7 +3,7 @@ Contributors: leewillis77
 Donate link: http://www.leewillis.co.uk/wordpress-plugins/?utm_source=wordpress&utm_medium=www&utm_campaign=wpec-simple-product-options
 Tags: e-commerce, wp e-commerce, wpec
 Requires at least: 3.2
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: 2.0
 
 == Description ==
